@@ -8,25 +8,22 @@ from langchain_openai import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage
 
 
-st.title("宇宙と海の質問回答Webアプリ")
+st.title("～宇宙と海の神秘～")
 st.write("##### このWebアプリについて")
-st.write("多くの謎を秘めた宇宙と海に関する質問回答Webアプリです。")
-st.write("##### 動作モード2:質問回答 ")
-st.write("ジャンルと質問を入力することで、回答を表示します。")
+st.write("多くの謎を秘めた宇宙と海に関する疑問に答えるWebアプリです。")
+st.write("##### 1.ジャンル選択 ")
+st.write("質問するジャンルをラジオボタンで選択してください。")
 
 # ジャンル選択
 selected_item = st.radio(
-    "ジャンルを選択してください。",
+    "質問ジャンル",
     ["宇宙の謎", "海の秘密"]
 )
 
 st.divider()
-
-# テキスト入力
-if selected_item == "宇宙の謎":
-    input_message = st.text_input(label="宇宙の謎についてのあなたの好奇心に答えます。テキストを入力してください。")
-else:
-    input_message = st.text_input(label="海の秘密についてあなたの探求心に答えます。テキストを入力してください。")
+st.write("##### 2.質問入力と回答表示") 
+st.write("「質問欄」に質問を入力し、実行ボタンを押すと回答が表示されます。")
+input_message = st.text_input(label="質問欄")
 
 
 #「入力テキスト」と「ラジオボタンでの選択値」を引数として受け取り、LLMからの回答を戻り値として返す関数
